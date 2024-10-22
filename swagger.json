@@ -1,0 +1,36 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "description": "This Is workisy Server Documentation.",
+    "version": "1.0.0",
+    "title": "workisy",
+    "contact": {
+      "email": "apiteam@workisy.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NmUzNTc3Mzc0NGYzZDMzMjhjMjZkZWEiLCJyb2xlIjoidmVuZG9yIiwiaWF0IjoxNzI2MjU5MzAzLCJleHAiOjE3MjYzNDU3MDMsImlzcyI6ImJsb2NrLXRpY2tldC13YWxhIn0.gqNUBy6oxYPKJeFCuiZ8csofGGne_U-hUhV1PNVlQvA",
+        "type": "string"
+      }
+    ]
+  },
+  "tags": [
+    
+  ],
+  "paths": {},
+  "components": {
+    "schemas": {},
+    "securitySchemes": { "bearer": { "type": "http", "scheme": "bearer" } }
+  },
+  "servers": [
+    { "url": "http://localhost:4000", "description": "local" }
+  ]
+}
