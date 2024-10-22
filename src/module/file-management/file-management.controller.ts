@@ -9,11 +9,6 @@ import { FileUpload } from '../../interface/file-upload.interface';
 class FileManagementController {
   public uploadSingle = async (req: RequestWithPayload, res: Response, next: NextFunction) => {
     try {
-      consoleLog("-------",req.file)
-      consoleLog("-------",req.body)
-
-      let checkErrorExist = CheckErrors(req);
-      if (checkErrorExist) return ErrorValidations(res, req, 422);
       const file = req.file;
       const body: FileUpload = req.body;
       if (Object.keys(body).length == 0) throw new createHttpError.NotAcceptable(ApiMessage.emptybody);
