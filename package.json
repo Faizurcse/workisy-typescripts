@@ -4,7 +4,7 @@
   "description": "APIS workisy",
   "main": "index.js",
   "scripts": {
-    "start:prod": "npm run build && cross-env NODE_ENV=production nodemon dist/server.js",
+    "start-prod": "npm run build && cross-env NODE_ENV=production nodemon dist/server.ts",
     "start:dev": "npm run build && cross-env NODE_ENV=development nodemon dist/server.js",
     "start:local": "npm run build && cross-env NODE_ENV=local nodemon dist/server.js",
     "dev": "cross-env NODE_ENV=development nodemon",

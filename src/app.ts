@@ -23,7 +23,7 @@ class App {
   public log_format: string;
   nodemon = require('./utils/init_nodemon');
   // redis = require('./utils/init_redis');
-  // cloudinary = require('./utils/cloudinary');
+  cloudinary = require('./utils/cloudinary');
 
   constructor(routes: Routes[]) {
     this.app = express();
@@ -39,7 +39,7 @@ class App {
     // this.initializeHealthCheck();
     // this.setStaticFolder();
     // this.getToken;
-    // this.cloudinary;
+     this.cloudinary;
     // this.redis;
   }
   // setStaticFolder() {
@@ -83,9 +83,10 @@ class App {
     }
   }
 
-  public getServer() {
-    return this.app;
-  }
+  // public getServer() {
+  //   return this.app;
+  // }
+  
   // private initializeHealthCheck() {
   //   this.app.use('/health-check', (req: Request, res: Response, next: NextFunction) => {
   //     return DataResponse(req, res, 200, 'health ok');
@@ -111,7 +112,6 @@ class App {
     });
     routes.forEach(route => {
       this.app.use('/', route.router);
-      console.log('route.router=',routes)
     });
   }
 
@@ -162,7 +162,10 @@ class App {
       }
       ErrorResponse(res, error.status || 500, error.message.toLowerCase());
     });
+    
   }
 }
 
 export default App;
+
+

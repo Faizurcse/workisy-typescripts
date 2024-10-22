@@ -1,4 +1,4 @@
-import mongoose, { model, Schema, Document } from 'mongoose';
+import  { model, Schema, Document } from 'mongoose';
 interface counterSchemaInterface {
   _id: String;
   seq: number;

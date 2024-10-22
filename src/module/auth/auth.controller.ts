@@ -1,12 +1,12 @@
 import { NextFunction, Request, Response } from 'express';
 import AuthService from './auth.service';
-import TokenService from '../../services/token.service';
 import { CheckErrors, ErrorValidations, DataResponse } from '../../utils/common';
 import { ApiMessage } from '../../utils/messages';
+// import TokenService from '../../services/token.service';
 
 class AuthController {
   private authService = new AuthService();
-  private tokenService = new TokenService();
+  // private tokenService = new TokenService();
   public adminLogin = async (req: Request, res: Response, next: NextFunction) => {
     try {
       let checkErrorExist = CheckErrors(req);

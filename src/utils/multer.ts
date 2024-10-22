@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync } from 'fs';
 import multer from 'multer';
 import path from 'path';
+import { consoleLog } from './common';
 // local upload
 const localStorage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -25,6 +26,7 @@ export const uploadToLocal = multer({
 // upload to cloudinary
 const storage = multer.diskStorage({
   filename: function (req, file, cb) {
+    consoleLog(file)
     cb(
       null,
       `${file.originalname.split('.').slice(0, -1).join('.')}_${getdateTime()}${path.extname(file.originalname)}`,

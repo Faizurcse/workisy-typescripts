@@ -1,6 +1,6 @@
 import { NextFunction, Response } from 'express';
 import { RequestWithPayload } from '../../interface/shared/request.interface';
-import { CheckErrors, consoleLog, DataResponse, ErrorValidations } from '../../utils/common';
+import { CheckErrors,  consoleLog,  DataResponse, ErrorValidations } from '../../utils/common';
 import { deleteFromCloudinary, uploadToCloudinary } from '../../utils/cloudinary';
 import createHttpError from 'http-errors';
 import { ApiMessage } from '../../utils/messages';
@@ -9,6 +9,9 @@ import { FileUpload } from '../../interface/file-upload.interface';
 class FileManagementController {
   public uploadSingle = async (req: RequestWithPayload, res: Response, next: NextFunction) => {
     try {
+      consoleLog("-------",req.file)
+      consoleLog("-------",req.body)
+
       let checkErrorExist = CheckErrors(req);
       if (checkErrorExist) return ErrorValidations(res, req, 422);
       const file = req.file;

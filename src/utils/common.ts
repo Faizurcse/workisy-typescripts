@@ -92,7 +92,9 @@ export function ErrorValidations(res: Response, req: Request, code: number) {
 }
 
 export function CheckErrors(req: Request) {
+
   const errors = validationResult(req);
+  consoleLog("errHHHHHHH---",errors)
   if (!errors.isEmpty()) {
     return true;
   } else {

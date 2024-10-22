@@ -37,7 +37,9 @@ class AuthService {
         const hashedPassword = hashSync(password, salt);
         body['password'] = hashedPassword;
         await AdminSchema.validate(body);
+
         const result = await AdminSchema.create(body);
+        
         const accessToken: string = await this.tokenService.signAccessToken(result._id);
         const refreshToken: string = await this.tokenService.signRefreshToken(result._id);
         const data = { user: result, tokens: { accessToken: accessToken, refreshToken: refreshToken } };
